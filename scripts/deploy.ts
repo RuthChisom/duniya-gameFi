@@ -14,6 +14,14 @@ async function main() {
   console.log(
     `Lock with ${ethers.utils.formatEther(lockedAmount)}ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
   );
+  const Greeter = await ethers.getContractFactory("Greeter");
+  const greeter = await Greeter.deploy("Hello World");
+
+  await greeter.deployed();
+
+  console.log(
+    `Greeter contract is deployed to ${greeter.address}! Weldone!!! `
+  );
 }
 
 // We recommend this pattern to be able to use async/await everywhere
