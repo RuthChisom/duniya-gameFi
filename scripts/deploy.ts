@@ -1,4 +1,5 @@
 import { ethers } from "hardhat";
+require("dotenv").config();
 
 async function main() {
   // const currentTimestampInSeconds = Math.round(Date.now() / 1000);
@@ -16,7 +17,7 @@ async function main() {
   // );
   
   const Greeter = await ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello World");
+  const greeter = await Greeter.deploy(process.env.WALLET_1, process.env.WALLET_2);
 
   await greeter.deployed();
 

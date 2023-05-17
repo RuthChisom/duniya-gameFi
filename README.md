@@ -34,7 +34,7 @@
 - Click the Verify Contract button under Contracts tab or Misc menu
 - Fill in the required information and click Continue
 - Copy the Contract Code from your project and post
-- Get the Constructor Arguments ABI-encoded (copy everything after the '0033' in the input data under the tranaction details - it usually starts and ends with zeros and has a lot of zeros in between)
+- Get the Constructor Arguments ABI-encoded, if it's not already generated (copy everything after the '0033' in the input data under the tranaction details - it usually starts and ends with zeros and has a lot of zeros in between)
 - Click the “Verify and Publish” button and wait for it to be processed
 
 <!-- Interacting with your deployed contract on Celo explorer -->
