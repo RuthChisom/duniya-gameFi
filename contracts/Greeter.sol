@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.18;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
@@ -31,12 +31,12 @@ contract Greeter is ERC721 {
         require(msg.value > 0, "Payment required");
         require(!_exists(tokenId), "Token already exists");
 
-        uint256 paymentAmount = msg.value.div(2); // Split payment equally
-        //uint256 paymentAmount2 = msg.value.div(2); // Split payment equally
+        uint256 paymentAmount1 = msg.value * 8 / 10; // 80% to wallet 1
+        uint256 paymentAmount2 = msg.value * 2 / 10; // 80% to wallet 2
 
         // Transfer payment to wallet1 and wallet2
-        payable(wallet1).transfer(paymentAmount);
-        payable(wallet2).transfer(paymentAmount);
+        payable(wallet1).transfer(paymentAmount1);
+        payable(wallet2).transfer(paymentAmount2);
 
         _safeMint(to, tokenId);
     }
