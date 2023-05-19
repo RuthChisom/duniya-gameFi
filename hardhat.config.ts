@@ -9,6 +9,10 @@ const config: HardhatUserConfig = {
     alfajores: {
       url: "https://alfajores-forno.celo-testnet.org",
       accounts: [process.env.PRIVATE_KEY] as HttpNetworkAccountConfig | undefined,
+    //   accounts: {
+    //     mnemonic: process.env.PRIVATE_KEY,
+    //     path: "m/44'/52752'/0'/0/"
+    // },
       chainId: 44787,
     }
   },

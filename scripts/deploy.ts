@@ -1,5 +1,6 @@
 import { ethers } from "hardhat";
 require("dotenv").config();
+const { verifyContract } = require("../utils/verifyContract");
 
 async function main() {
   // const currentTimestampInSeconds = Math.round(Date.now() / 1000);
@@ -17,13 +18,20 @@ async function main() {
   // );
   
   const Greeter = await ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy(process.env.WALLET_1, process.env.WALLET_2);
+  const greeter = await Greeter.deploy('0x675D50bD75F96DE5f21d9BfdB2C9b761e4aF4834', '0x9872421a71E1b12CBF62E649B121e394c9BC1ed7');
+  // const greeter = await Greeter.deploy(process.env.WALLET_1, process.env.WALLET_2);
 
   await greeter.deployed();
+
+  const contractAddress = greeter.address;
+
 
   console.log(
     `Greeter contract is deployed to ${greeter.address}! Weldone!!! `
   );
+  // console.log("Verifying contract -----------");
+
+  // await verifyContract(greeter.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

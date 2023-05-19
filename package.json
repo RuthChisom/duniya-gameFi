@@ -18,6 +18,8 @@
     "save-dev": "^0.0.1-security"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^2.0.2"
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1"
   }
 }
